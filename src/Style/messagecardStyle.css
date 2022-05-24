@@ -1,0 +1,22 @@
+.message-card {
+  margin: 15px 0;
+  padding: 15px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.145);
+}
+
+.message-card .details {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+.message-card .details > span {
+  flex: 0.5;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  color: var(--dark-color);
+}
+.message-card .details > p {
+  flex: 2.5;
+  text-align: justify;
+}
