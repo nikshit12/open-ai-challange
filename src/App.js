@@ -53,6 +53,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <Logo />
+        <h1>Hey</h1>
         <Prompt onMessageSent={this.sendMessageToOpenAI} />
         <MessageList messages={this.state.resposne} />
       </div>
