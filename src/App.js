@@ -45,9 +45,7 @@ class App extends React.Component {
             ],
           });
           this.setState({ resposne: this.state.resposne.reverse() });
-          console.dir(this.state.resposne);
         }
-        this.setState({ showLoading: false });
       });
   };
   render() {
