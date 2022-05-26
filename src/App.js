@@ -32,6 +32,7 @@ class App extends React.Component {
         return response.json();
       })
       .then((data) => {
+        this.setState({ showLoading: true });
         if (data) {
           this.setState({
             resposne: [
@@ -46,6 +47,7 @@ class App extends React.Component {
           this.setState({ resposne: this.state.resposne.reverse() });
           // console.dir(this.state.resposne);
         }
+        this.setState({ showLoading: false });
       });
   };
   storeInLocalStorage = () => {
@@ -77,13 +79,21 @@ class App extends React.Component {
       return null;
     }
   };
+  renderLoadingScreen = () => {
+    if (this.state.showLoading) {
+      return <div className="loadingscreen">loadning</div>;
+    } else {
+      return null;
+    }
+  };
   render() {
     return (
       <div className="container">
         <Logo />
         <Prompt onMessageSent={this.sendMessageToOpenAI} />
         <MessageList messages={this.state.resposne} />
-        {this.localStorageData()}
+        {/* {this.localStorageData()} */}
+        {this.renderLoadingScreen}
       </div>
     );
   }
