@@ -2,7 +2,6 @@ import React from "react";
 import "../Style/messagecardStyle.css";
 
 const MessageCard = ({ message }) => {
-  console.dir(message);
   return (
     <div className="message-card">
       <div className="details">

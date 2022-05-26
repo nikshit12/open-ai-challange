@@ -48,14 +48,42 @@ class App extends React.Component {
         }
       });
   };
-
+  storeInLocalStorage = () => {
+    localStorage.setItem("data", "ahghg");
+    console.dir(localStorage.data);
+  };
+  localStorageData = () => {
+    if (this.state.resposne.length > 0) {
+      return (
+        <button onClick={this.storeInLocalStorage}>
+          Save on local storage
+        </button>
+      );
+    } else {
+      return null;
+    }
+  };
+  getFromLocalStorage = () => {
+    console.dir(this.localStorageData.data);
+  };
+  showLastData = () => {
+    if (this.localStorageData.data.length > 0) {
+      return (
+        <button onClick={this.getFromLocalStorage}>
+          Save on local storage
+        </button>
+      );
+    } else {
+      return null;
+    }
+  };
   render() {
     return (
       <div className="container">
         <Logo />
-        <h1>hey</h1>
         <Prompt onMessageSent={this.sendMessageToOpenAI} />
         <MessageList messages={this.state.resposne} />
+        {this.localStorageData()}
       </div>
     );
   }
