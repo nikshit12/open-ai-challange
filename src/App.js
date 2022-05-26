@@ -45,35 +45,10 @@ class App extends React.Component {
             ],
           });
           this.setState({ resposne: this.state.resposne.reverse() });
-          // console.dir(this.state.resposne);
+          console.dir(this.state.resposne);
         }
         this.setState({ showLoading: false });
       });
-  };
-  storeInLocalStorage = () => {
-    localStorage.setItem("data", "ahghg");
-    console.dir(localStorage.data);
-  };
-  localStorageData = () => {
-    if (this.state.resposne.length > 0) {
-      return (
-        <button onClick={this.storeInLocalStorage}>
-          Save on local storage
-        </button>
-      );
-    } else {
-      return null;
-    }
-  };
-  getFromLocalStorage = () => {
-    console.dir(this.localStorageData.data);
-  };
-  renderLoadingScreen = () => {
-    if (this.state.showLoading) {
-      return <div className="loadingscreen">loadning</div>;
-    } else {
-      return null;
-    }
   };
   render() {
     return (
@@ -81,8 +56,6 @@ class App extends React.Component {
         <Logo />
         <Prompt onMessageSent={this.sendMessageToOpenAI} />
         <MessageList messages={this.state.resposne} />
-        {/* {this.localStorageData()} */}
-        {this.renderLoadingScreen}
       </div>
     );
   }

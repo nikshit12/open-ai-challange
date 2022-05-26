@@ -5,6 +5,7 @@ class MessageList extends React.Component {
   state = { isLoading: true };
   componentDidMount() {
     this.setState({ isLoading: false });
+    console.log(this);
   }
   showList = () => {
     const messageList = this.props.messages.map((message) => {
@@ -12,16 +13,15 @@ class MessageList extends React.Component {
     });
     return <div>{messageList}</div>;
   };
+  showLoading = () => {
+    return (
+      <div>
+        <h1>loading data</h1>
+      </div>
+    );
+  };
   render() {
-    if (this.state.isLoading) {
-      return (
-        <div>
-          <h1>loading data</h1>
-        </div>
-      );
-    } else {
-      this.showList();
-    }
+    return this.showList();
   }
 }
 export default MessageList;
