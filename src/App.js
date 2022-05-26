@@ -68,17 +68,6 @@ class App extends React.Component {
   getFromLocalStorage = () => {
     console.dir(this.localStorageData.data);
   };
-  showLastData = () => {
-    if (this.localStorageData.data.length > 0) {
-      return (
-        <button onClick={this.getFromLocalStorage}>
-          Save on local storage
-        </button>
-      );
-    } else {
-      return null;
-    }
-  };
   renderLoadingScreen = () => {
     if (this.state.showLoading) {
       return <div className="loadingscreen">loadning</div>;
