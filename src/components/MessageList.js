@@ -7,12 +7,15 @@ class MessageList extends React.Component {
     this.setState({ isLoading: false });
     console.log(this);
   }
+  //helper function for showing message list
   showList = () => {
     const messageList = this.props.messages.map((message) => {
       return <MessageCard key={message.id} message={message} />;
     });
     return <div>{messageList}</div>;
   };
+  // TODO
+  //implementing logic for loading screen
   showLoading = () => {
     return (
       <div>
@@ -20,6 +23,7 @@ class MessageList extends React.Component {
       </div>
     );
   };
+  //render method
   render() {
     return this.showList();
   }

@@ -4,12 +4,11 @@ import MessageList from "./components/MessageList";
 import Logo from "./components/Logo";
 import "./Style/main.css";
 class App extends React.Component {
+  //initializing state
   state = {
     resposne: [],
   };
-  insertData = (data) => {
-    this.setState({ response: this.state.response.push(data) });
-  };
+  //sending request to api
   sendMessageToOpenAI = (message) => {
     const data = {
       prompt: message,
@@ -34,6 +33,7 @@ class App extends React.Component {
       .then((data) => {
         this.setState({ showLoading: true });
         if (data) {
+          //phandling response and storeing it with spred operator
           this.setState({
             resposne: [
               ...this.state.resposne,
@@ -44,10 +44,12 @@ class App extends React.Component {
               },
             ],
           });
+          // reversing the stored values
           this.setState({ resposne: this.state.resposne.reverse() });
         }
       });
   };
+  //displaying components
   render() {
     return (
       <div className="container">

@@ -1,6 +1,6 @@
 import React from "react";
 import "../Style/messagecardStyle.css";
-
+//compopnent for displaying particukar message
 const MessageCard = ({ message }) => {
   return (
     <div className="message-card">

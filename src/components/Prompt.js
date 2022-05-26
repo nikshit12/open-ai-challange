@@ -3,6 +3,7 @@ import "../Style/promptStyle.css";
 
 class Prompt extends React.Component {
   state = { message: "" }; //Initializing state for message
+  // sending message to parent for using it in api request
   sendPrompt = (e) => {
     e.preventDefault();
     //Sending message to App
@@ -14,10 +15,12 @@ class Prompt extends React.Component {
       alert("Please write some message..");
     }
   };
+  // seeting messagevalue on input changes
   setMessage = (e) => {
     //setting message
     this.setState({ message: e.target.value });
   };
+  // displaying prompt component
   render() {
     return (
       <section className="prompt-container pb-15">
