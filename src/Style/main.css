@@ -50,7 +50,23 @@ section {
   display: inherit;
   height: 145px;
 }
-
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 52px;
+  line-height: 60px;
+  text-transform: capitalize;
+}
 @media (max-width: 1024px) {
   .container {
     max-width: 790px;

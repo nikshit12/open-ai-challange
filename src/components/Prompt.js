@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../Style/promptStyle.css";
 
-const Prompt = ({ onMessageSent }) => {
+const Prompt = ({ onMessageSent, showLoading }) => {
   const [message, setMessage] = useState(""); //Initializing state for message
   // sending message to parent for using it in api request
   const sendPrompt = (e) => {
@@ -20,21 +20,30 @@ const Prompt = ({ onMessageSent }) => {
     //setting message
     setMessage(e.target.value);
   };
+  const showLoader = () => {
+    if (showLoading) {
+      return <h1>loading</h1>;
+    }
+  };
   return (
     <section className="prompt-container pb-15">
       {/* form start  */}
-      <form className="prompt-form" onSubmit={sendPrompt}>
-        <div className="field">
-          <label>Enter message</label>
-          <textarea
-            rows="15"
-            cols="45"
-            value={message}
-            onChange={setMessageText}
-          ></textarea>
-        </div>
-        <button type="submit">send</button>
-      </form>
+      {!showLoading ? (
+        <form className="prompt-form" onSubmit={sendPrompt}>
+          <div className="field">
+            <label>Enter message</label>
+            <textarea
+              rows="15"
+              cols="45"
+              value={message}
+              onChange={setMessageText}
+            ></textarea>
+          </div>
+          <button type="submit">send</button>
+        </form>
+      ) : (
+        <div className="loader">SHopify is awsome and we are fetching data</div>
+      )}
       {/* form end  */}
     </section>
   );

@@ -7,9 +7,11 @@ import "./Style/main.css";
 const App = () => {
   //initializing state
   const [response, setResponse] = useState([]);
-  // useEffect(() => {
+  const [isLoading, setLoading] = useState(false);
+
   //sending request to api
   const sendMessageToOpenAI = (message) => {
+    setLoading(true);
     const data = {
       prompt: message,
       temperature: 0.5,
@@ -42,16 +44,16 @@ const App = () => {
           );
           // reversing the stored values
           setResponse(response.reverse());
+          setLoading(false);
           // console.log(response);
         }
       });
   };
-  // }, []);
   //displaying components
   return (
     <div className="container">
       <Logo />
-      <Prompt onMessageSent={sendMessageToOpenAI} />
+      <Prompt showLoading={isLoading} onMessageSent={sendMessageToOpenAI} />
       {response.length > 0 ? <MessageList messages={response} /> : null}
     </div>
   );
