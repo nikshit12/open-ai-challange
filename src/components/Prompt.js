@@ -20,11 +20,6 @@ const Prompt = ({ onMessageSent, showLoading }) => {
     //setting message
     setMessage(e.target.value);
   };
-  const showLoader = () => {
-    if (showLoading) {
-      return <h1>loading</h1>;
-    }
-  };
   return (
     <section className="prompt-container pb-15">
       {/* form start  */}
