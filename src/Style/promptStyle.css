@@ -1,0 +1,41 @@
+.prompt-container {
+  text-align: center;
+}
+.field {
+  position: relative;
+}
+.field label {
+  position: absolute;
+  text-transform: capitalize;
+  top: -20px;
+  left: 16px;
+  background-color: var(--white-color);
+  font-size: 20px;
+  line-height: 28px;
+  padding: 8px;
+}
+.field textarea {
+  font-size: 16px;
+  line-height: 20px;
+  width: 100%;
+  padding-top: 25px;
+  padding-left: 15px;
+}
+
+.prompt-form button {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-family: var(--title-fonts);
+  text-transform: capitalize;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  width: 100%;
+  padding: 15px;
+  cursor: pointer;
+  border: none;
+  transition: 0.5s ease-in-out;
+}
+.prompt-form button:hover {
+  background-color: var(--dark-color);
+}
